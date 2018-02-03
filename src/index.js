@@ -1,13 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-// import App from './components/app';
+import ScheduleForm from "./components/ScheduleForm.js";
 
-const App = () => (
-  <div >
-    Hello World
-  </div>
-)
-
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<ScheduleForm />, document.getElementById("root"));
