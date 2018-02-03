@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -33,7 +34,13 @@ class ScheduleForm extends Component {
   }
 
   handleSubmitRequest() {
-    console.log(this.state);
+    const { address, date, time } = this.state;
+
+    axios.post('/requestPickup', {
+      address: address,
+      date: date,
+      time: time
+    });
   }
 
   render() {
