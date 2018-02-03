@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon server/index.js",
     "build": "webpack --config=webpack.config.js --display-error-details --watch"
   },
   "repository": {

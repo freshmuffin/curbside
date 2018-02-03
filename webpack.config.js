@@ -10,6 +10,7 @@ module.exports = {
     filename: '[name].js',
     path: DIST_DIR
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
