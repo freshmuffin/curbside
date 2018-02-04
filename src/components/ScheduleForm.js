@@ -21,6 +21,7 @@ class ScheduleForm extends Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmitRequest = this.handleSubmitRequest.bind(this);
+    this.validateForm = this.validateForm.bind(this);
   }
   
   handleInputChange(event, form) {
@@ -33,12 +34,22 @@ class ScheduleForm extends Component {
     const { street, apt, state, zipcode, date, time, phone } = this.state;
     const address = street + ' ' + state + ' ' + zipcode + ', apt:' + apt;
 
+    if (!this.validateForm()) {
+      return alert('Please enter in all required fields')
+    }
+  
     axios.post('/requestPickup', {
       address: address,
       date: date,
       time: time,
       phone: phone
     });
+  }
+
+  validateForm() {
+    const { street, state, zipcode, date, time, phone } = this.state;
+
+    return street && state && zipcode && date && time && phone ? true : false;
   }
 
   render() {
@@ -59,7 +70,7 @@ class ScheduleForm extends Component {
               <input type='text' onChange={event => this.handleInputChange(event, 'phone')}/>
             </div>
             <div>
-              <button className="ui button violet" onClick={this.handleSubmitRequest}>Confirm</button>
+              <button type="button" className="ui button violet" onClick={this.handleSubmitRequest}>Confirm</button>
             </div>
           </form>
         </div>
