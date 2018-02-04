@@ -4,11 +4,9 @@ import ReactDOM from "react-dom";
 import ScheduleForm from "./components/ScheduleForm.js";
 
 const Root = () => (
-  <div>
-    <div className="ui huge header center aligned"> Schedule a Pickup:</div>
-    <div className="mainBox">
-      <ScheduleForm />
-    </div>
+  <div className="mainBox">
+    <div className="ui huge header center aligned violet"> Schedule a Pickup:</div>
+    <ScheduleForm />
   </div>
 )
 

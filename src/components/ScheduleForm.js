@@ -44,11 +44,11 @@ class ScheduleForm extends Component {
   render() {
     return ( 
       <div className="center aligned ui grid">
-        <div className="column five wide">
+        <div className="column seven wide">
           <form className="ui form">
             <AddressForm handleChange={this.handleInputChange}/>
               <div className="two fields">
-                <div className="eight wide field">
+                <div className="eight wide field required">
                   <label>Date:</label>
                   <input type='text' onChange={event => this.handleInputChange(event, 'date')}/>
                 </div>
@@ -59,7 +59,7 @@ class ScheduleForm extends Component {
               <input type='text' onChange={event => this.handleInputChange(event, 'phone')}/>
             </div>
             <div>
-              <button className="ui button" onClick={this.handleSubmitRequest}>Confirm</button>
+              <button className="ui button violet" onClick={this.handleSubmitRequest}>Confirm</button>
             </div>
           </form>
         </div>
