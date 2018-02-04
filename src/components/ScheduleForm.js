@@ -9,7 +9,8 @@ class ScheduleForm extends Component {
     this.state = {
       address: '',
       date: '',
-      time: ''
+      time: '',
+      phone: ''
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -30,16 +31,21 @@ class ScheduleForm extends Component {
       this.setState({
         time: event.target.value
       })
+    } else if (form === 'phone') {
+      this.setState({
+        phone: event.target.value
+      })
     }
   }
 
   handleSubmitRequest() {
-    const { address, date, time } = this.state;
+    const { address, date, time, phone } = this.state;
 
     axios.post('/requestPickup', {
       address: address,
       date: date,
-      time: time
+      time: time,
+      phone: phone
     });
   }
 
@@ -48,7 +54,8 @@ class ScheduleForm extends Component {
       <div>
         Address: <input type='text' onChange={event => this.handleInputChange(event, 'address')}/>
         Date: <input type='text' onChange={event => this.handleInputChange(event, 'date')}/>
-        Time <input type='text' onChange={event => this.handleInputChange(event, 'time')}/>
+        Time: <input type='text' onChange={event => this.handleInputChange(event, 'time')}/>
+        Phone Number: <input type='text' onChange={event => this.handleInputChange(event, 'phone')}/>        
         <button onClick={this.handleSubmitRequest}>Save</button>
       </div>
     );
@@ -56,3 +63,10 @@ class ScheduleForm extends Component {
 }
 
 export default ScheduleForm;
+
+{/* <select name="aircraftSizes"
+value={this.state.aircraftSize}
+onChange={event => this.handleAircraftSize(event)}>
+  <option value="S">S-Small</option>
+  <option value="L">L-Large</option>
+</select> */}

@@ -2,7 +2,7 @@ var mysql = require('mysql');
 
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : '',
+  user     : 'root',
   password : '',
   database : 'FreshMuffin'
 });
@@ -11,4 +11,4 @@ connection.connect(function(err) {
   if (err) { throw err }
 });
 
-export default connection
+module.exports.connection = connection;
