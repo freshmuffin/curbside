@@ -5,18 +5,18 @@ const AddressForm = ({ handleChange }) => (
     <div className="field">
       <div className="fields">
         <div className="twelve wide field">
-          Address:
+          <p>Address:</p>
           <input type="text" placeholder="Street Address" onChange={(event) => handleChange(event, 'street')}/>
         </div>
         <div className="four wide field">
-          Apt #:
+          <p>Apt #:</p>
           <input type="text" placeholder="Apt #" onChange = {(event) => handleChange(event, 'apt')}/>
         </div>
       </div>
       <div className="two fields">
         <StateDropdown handleChange={handleChange}/>
         <div className="four wide field">
-          Zipcode:
+          <p>Zipcode:</p>
           <input type="text" placeholder="Zipcode" onChange = {(event) => handleChange(event, 'zipcode')}/>
         </div>    
       </div>  

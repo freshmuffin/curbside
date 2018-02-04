@@ -3,4 +3,13 @@ import ReactDOM from "react-dom";
 
 import ScheduleForm from "./components/ScheduleForm.js";
 
-ReactDOM.render(<ScheduleForm />, document.getElementById("root"));
+const Root = () => (
+  <div>
+    <div class="ui huge header center aligned"> Schedule a Pickup:</div>
+    <div className="mainBox">
+      <ScheduleForm />
+    </div>
+  </div>
+)
+
+ReactDOM.render(<Root />, document.getElementById("root"));
