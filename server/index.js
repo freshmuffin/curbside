@@ -24,7 +24,6 @@ app.post('/requestPickup', function (req, res) {
     console.log(results);
     res.end();
   });
-
 });
 
 app.listen(port, _ => {

@@ -5,42 +5,39 @@ import ReactDOM from 'react-dom';
 import AddressForm from './AddressForm.js';
 
 class ScheduleForm extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-      address: '',
+      street: '',
+      apt: '',
+      state: '',
+      zipcode: '',
       date: '',
       time: '00:00 - 01:00',
       phone: ''
     }
 
+    this.handleAddressInput = this.handleAddressInput.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmitRequest = this.handleSubmitRequest.bind(this);
   }
 
+  handleAddressInput(event, form) {
+    this.setState({
+      [form]: event.target.value
+    })
+  }
+  
   handleInputChange(event, form) {
-    if (form === 'address') {
-      this.setState({
-        address: event.target.value
-      })
-    } else if (form === 'date') {
-      this.setState({
-        date: event.target.value
-      })
-    } else if (form === 'time') {
-      this.setState({
-        time: event.target.value
-      })
-    } else if (form === 'phone') {
-      this.setState({
-        phone: event.target.value
-      })
-    }
+    this.setState({
+      [form]: event.target.value
+    })
   }
 
   handleSubmitRequest() {
-    const { address, date, time, phone } = this.state;
+    const { street, apt, state, zipcode, date, time, phone } = this.state;
+    const address = street + ' ' + state + ' ' + zipcode + ', apt:' + apt;
 
     axios.post('/requestPickup', {
       address: address,
@@ -53,7 +50,7 @@ class ScheduleForm extends Component {
   render() {
     return (
       <div className="center">
-        <AddressForm />
+        <AddressForm handleChange={this.handleAddressInput}/>
         <div>
           Date:
           <input type='text' onChange={event => this.handleInputChange(event, 'date')}/>
