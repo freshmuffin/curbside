@@ -61,3 +61,8 @@ body {
 label {
   text-align: left;
 }
+
+.confirmation {
+  margin-top: 20%;
+  font-size: 30px;
+}
