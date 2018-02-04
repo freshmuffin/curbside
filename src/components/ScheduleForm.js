@@ -37,13 +37,16 @@ class ScheduleForm extends Component {
     if (!this.validateForm()) {
       return alert('Please enter in all required fields')
     }
-  
+
     axios.post('/requestPickup', {
       address: address,
       date: date,
       time: time,
       phone: phone
-    });
+    })
+      .then(() => {
+        location.assign('/confirmation');
+      })
   }
 
   validateForm() {
@@ -54,6 +57,8 @@ class ScheduleForm extends Component {
 
   render() {
     return ( 
+    <div className="mainBox">
+    <div className="ui huge header center aligned violet"> Schedule a Pickup:</div>
       <div className="center aligned ui grid">
         <div className="column seven wide">
           <form className="ui form">
@@ -70,10 +75,11 @@ class ScheduleForm extends Component {
               <input type='text' onChange={event => this.handleInputChange(event, 'phone')}/>
             </div>
             <div>
-              <button type="button" className="ui button violet" onClick={this.handleSubmitRequest}>Confirm</button>
+            <button type="button" className="ui button violet" onClick={this.handleSubmitRequest}>Confirm</button>
             </div>
           </form>
         </div>
+      </div>
       </div>
     );
   };

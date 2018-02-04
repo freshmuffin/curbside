@@ -19,11 +19,11 @@ app.post('/requestPickup', function (req, res) {
   const { address, date, time, phone } = req.body;
   let pickupDate = date +' '+ time;
 
-  database.connection.query(`INSERT INTO client (site_id, phone, address, latitude, longitude, date) VALUES ('123', '${phone}', '${address}', '123', '123', '${pickupDate}')`, function (error, results, fields) {
-    if (error) throw error;
-    console.log(results);
+  // database.connection.query(`INSERT INTO client (site_id, phone, address, latitude, longitude, date) VALUES ('123', '${phone}', '${address}', '123', '123', '${pickupDate}')`, function (error, results, fields) {
+    // if (error) throw error;
+    // console.log(results);
     res.end();
-  });
+  // });
 });
 
 app.listen(port, _ => {
