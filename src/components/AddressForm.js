@@ -2,10 +2,9 @@ import StateDropdown from "./StateDropdown";
 import React from 'react';
 
 const AddressForm = ({ handleChange }) => (
-  <form className="ui form">
     <div className="field">
       <div className="fields">
-        <div className="six wide field">
+        <div className="twelve wide field">
           Address:
           <input type="text" placeholder="Street Address" onChange={(event) => handleChange(event, 'street')}/>
         </div>
@@ -22,7 +21,6 @@ const AddressForm = ({ handleChange }) => (
         </div>    
       </div>  
     </div>
-  </form>
 );
 
 export default AddressForm;

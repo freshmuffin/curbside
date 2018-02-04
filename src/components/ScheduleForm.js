@@ -42,18 +42,24 @@ class ScheduleForm extends Component {
   }
 
   render() {
-    return (
-      <div className="center">
-        <AddressForm handleChange={this.handleInputChange}/>
-        <div>
-          Date:
-          <input type='text' onChange={event => this.handleInputChange(event, 'date')}/>
+    return ( 
+      <div className="center aligned ui grid">
+        <div className="column five wide">
+          <form className="ui form">
+            <AddressForm handleChange={this.handleInputChange}/>
+              <div className="two fields">
+                <div className="eight wide field">
+                  Date:
+                  <input type='text' onChange={event => this.handleInputChange(event, 'date')}/>
+                </div>
+                <TimeDropdown handleChange={this.handleInputChange}/>            
+            </div>
+            <div>
+              Phone Number: <input type='text' onChange={event => this.handleInputChange(event, 'phone')}/>
+            </div>
+            <button class="ui button" onClick={this.handleSubmitRequest}>Confirm</button>
+          </form>
         </div>
-        <TimeDropdown handleChange={this.handleInputChange}/>
-        <div>
-          Phone Number: <input type='text' onChange={event => this.handleInputChange(event, 'phone')}/>
-        </div>
-        <button onClick={this.handleSubmitRequest}>Save</button>
       </div>
     );
   };
