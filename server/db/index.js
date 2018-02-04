@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   password : '',
   database : 'FreshMuffin'
 });
- 
+
 connection.connect(function(err) {
   if (err) { throw err }
 });

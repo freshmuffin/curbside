@@ -17,15 +17,16 @@ app.get('*', function (req, res) {
 
 app.post('/requestPickup', function (req, res) {
   const { address, date, time, phone } = req.body;
+  let pickupDate = date +' '+ time;
 
-  database.connection.query(`INSERT INTO client (site_id, phone, address, latitude, longitude, date, time_window) VALUES ('123', ${phone}, ${address}, '123', '123', ${date}, ${time})`, function (error, results, fields) {
+  database.connection.query(`INSERT INTO client (site_id, phone, address, latitude, longitude, date) VALUES ('123', '${phone}', '${address}', '123', '123', '${pickupDate}')`, function (error, results, fields) {
     if (error) throw error;
     console.log(results);
     res.end();
   });
- 
+
 });
 
 app.listen(port, _ => {
   console.log(`Server connected to port number: ${port}`);
-}); 
+});
