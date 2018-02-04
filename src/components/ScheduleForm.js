@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import AddressForm from './AddressForm.js';
+
 class ScheduleForm extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +41,7 @@ class ScheduleForm extends Component {
 
   handleSubmitRequest() {
     const { address, date, time, phone } = this.state;
-    console.log(this.state.time);
+
     axios.post('/requestPickup', {
       address: address,
       date: date,
@@ -50,10 +52,8 @@ class ScheduleForm extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          Address: <input type='text' onChange={event => this.handleInputChange(event, 'address')}/>
-        </div>
+      <div className="center">
+        <AddressForm />
         <div>
           Date:
           <input type='text' onChange={event => this.handleInputChange(event, 'date')}/>
