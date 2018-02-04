@@ -4,7 +4,7 @@ const StateDropdown = ({handleChange}) => (
   <div className="six wide field required">
     <label>State:</label>
     <select className="ui fluid dropdown" onChange={(event) => handleChange(event, 'state')}>
-      <option value="">State</option>
+      <option value="">Please select</option>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
       <option value="AZ">Arizona</option>

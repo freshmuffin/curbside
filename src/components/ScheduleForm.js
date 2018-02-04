@@ -15,7 +15,7 @@ class ScheduleForm extends Component {
       state: '',
       zipcode: '',
       date: '',
-      time: '00:00 - 01:00',
+      time: '',
       phone: ''
     }
 

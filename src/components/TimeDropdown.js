@@ -4,6 +4,7 @@ const TimeDropdown = ({handleChange}) => (
   <div className="required field">
     <label>Time:</label>    
     <select className="ui fluid dropdown" onChange={event => handleChange(event, 'time')}>
+      <option value="">Please select</option>
       <option value="00:00">00:00 - 00:59</option>
       <option value="01:00:00">01:00 - 01:59</option>
       <option value="02:00:00">02:00 - 02:59</option>
