@@ -1,8 +1,8 @@
 import React from 'react';
 
 const StateDropdown = ({handleChange}) => (
-  <div className="six wide field">
-    <p>State:</p>
+  <div className="six wide field required">
+    <label>State:</label>
     <select className="ui fluid dropdown" onChange={(event) => handleChange(event, 'state')}>
       <option value="">State</option>
       <option value="AL">Alabama</option>

@@ -5,7 +5,7 @@ import ScheduleForm from "./components/ScheduleForm.js";
 
 const Root = () => (
   <div>
-    <div class="ui huge header center aligned"> Schedule a Pickup:</div>
+    <div className="ui huge header center aligned"> Schedule a Pickup:</div>
     <div className="mainBox">
       <ScheduleForm />
     </div>

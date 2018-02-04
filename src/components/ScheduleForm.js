@@ -49,13 +49,13 @@ class ScheduleForm extends Component {
             <AddressForm handleChange={this.handleInputChange}/>
               <div className="two fields">
                 <div className="eight wide field">
-                  <p>Date:</p>
+                  <label>Date:</label>
                   <input type='text' onChange={event => this.handleInputChange(event, 'date')}/>
                 </div>
-                <TimeDropdown handleChange={this.handleInputChange}/>            
+                <TimeDropdown handleChange={this.handleInputChange}/>
             </div>
-            <div>
-              <p>Phone Number:</p>
+            <div className="required field">
+              <label>Phone Number:</label>
               <input type='text' onChange={event => this.handleInputChange(event, 'phone')}/>
             </div>
             <div>
